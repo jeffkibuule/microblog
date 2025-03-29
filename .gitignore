@@ -4,6 +4,11 @@ __pycache__/
 *$py.class
 logs/
 *.db
-venv/
+
+*.mo
+
+venv
 .flaskenv
 app.db
+microblog.log*
+*.pot
