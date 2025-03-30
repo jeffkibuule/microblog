@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-03-30 11:27-0700\n"
-"PO-Revision-Date: 2025-03-30 11:29-0700\n"
+"POT-Creation-Date: 2025-03-30 14:24-0700\n"
+"PO-Revision-Date: 2025-03-30 14:27-0700\n"
 "Last-Translator: \n"
 "Language-Team: es <LL@li.org>\n"
 "Language: es\n"
@@ -110,11 +110,11 @@ msgstr "Busca en tu email las instrucciones para crear una nueva contraseña"
 msgid "Your password has been reset."
 msgstr "Tu contraseña ha sido cambiada."
 
-#: app/translate.py:15 app/translate.py:32
+#: app/translate.py:15 app/translate.py:33
 msgid "Error: the translation service is not configured."
 msgstr "Error: El servicio de traducción no está configurado."
 
-#: app/translate.py:25 app/translate.py:44
+#: app/translate.py:26 app/translate.py:46
 msgid "Error: the translation service failed."
 msgstr "Error: El servicio de traducción falló."
 
@@ -128,7 +128,7 @@ msgstr "Bienvenido a Microblog"
 
 #: app/templates/base.html:23
 msgid "Home"
-msgstr "Inicio"
+msgstr "Casa"
 
 #: app/templates/base.html:26
 msgid "Explore"
@@ -136,7 +136,7 @@ msgstr "Explorar"
 
 #: app/templates/base.html:30
 msgid "Login"
-msgstr "Ingresar"
+msgstr "Iniciar Sesión"
 
 #: app/templates/base.html:34
 #, fuzzy
@@ -145,7 +145,11 @@ msgstr "Editar Perfil"
 
 #: app/templates/base.html:37
 msgid "Logout"
-msgstr "Salir"
+msgstr "Cerrar Sesión"
+
+#: app/templates/base.html:68
+msgid "Translation"
+msgstr "Traducción"
 
 #: app/templates/edit_profile.html:5
 msgid "Edit Profile"
@@ -221,3 +225,21 @@ msgstr "Seguir"
 #: app/templates/user.html:26
 msgid "Unfollow"
 msgstr "Dejar de seguir"
+
+#~ msgid "Welcome to Microblog"
+#~ msgstr "Bienvenido a Microblog"
+
+#~ msgid "Home"
+#~ msgstr "Inicio"
+
+#~ msgid "Explore"
+#~ msgstr "Explorar"
+
+#~ msgid "Login"
+#~ msgstr "Ingresar"
+
+#~ msgid "Profile"
+#~ msgstr "Editar Perfil"
+
+#~ msgid "Logout"
+#~ msgstr "Salir"

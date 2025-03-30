@@ -27,7 +27,7 @@
 						</li>
 						{% if current_user.is_anonymous %}
 						<li class="nav-item">
-							<a class="nav-link {% if request.path.startswith('/login') %}active{% endif %}"  aria-current="page"href="{{ url_for('login') }}">_{{ _('Login') }}</a>
+							<a class="nav-link {% if request.path.startswith('/login') %}active{% endif %}"  aria-current="page"href="{{ url_for('login') }}">{{ _('Login') }}</a>
 						</li>
 						{% else %}
 						<li class="nav-item">
@@ -65,7 +65,7 @@
 					})
 				})
 				const data = await response.json()
-				document.getElementById(destElem).innerText = data.text;
+				document.getElementById(destElem).innerText = "{{ _('Translation') }}: " + data.text;
 			}
 		</script>
 	</body>
