@@ -2,16 +2,28 @@
     <tr>
         <td width="70px">
             <a href="{{ url_for('user', username=post.author.username) }}">
-                <img src="{{ post.author.avatar(70) }}">
+                <img src="{{ post.author.avatar(70) }}" style="border-radius: 16px;">
             </a>
         </td>
         <td>
             <a href="{{ url_for('user', username=post.author.username) }}">
-                {{ post.author.username }}
-            </a>
+                {{ post.author.username }}</a>
             said {{ moment(post.timestamp).fromNow() }}:
             <br>
-            {{ post.body }}
+            {% if post.language and post.language != g.locale %}
+            <span class="badge text-bg-secondary">{{ post.language.upper() }}</span>
+            {% endif %}
+            <span id="post{{ post.id }}">{{ post.body }}</span>
+            {% if post.language and post.language != g.locale %}
+            <br><br>
+            <span id="translation{{ post.id }}">
+                <a href="javascript:translate(
+                    'post{{ post.id }}',
+                    'translation{{ post.id }}',
+                    '{{ post.language }}',
+                    '{{ g.locale }}');" class="badge text-bg-primary" style="text-decoration:none;">{{ _('Translate') }}</a>
+            </span>
+            {% endif %}
         </td>
     </tr>
 </table>
