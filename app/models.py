@@ -1,13 +1,15 @@
 from datetime import datetime, timezone
+from hashlib import md5
+from time import time
 from typing import Optional
 import sqlalchemy as sa
 import sqlalchemy.orm as so
-from app import db, login, app
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask import current_app
 from flask_login import UserMixin
-from hashlib import md5
-from time import time
+from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
+from app import db, login
+
 
 followers = sa.Table(
 		'followers',
@@ -15,6 +17,7 @@ followers = sa.Table(
 		sa.Column('follower_id', sa.Integer, sa.ForeignKey('user.id'), primary_key=True),
 		sa.Column('followed_id', sa.Integer, sa.ForeignKey('user.id'), primary_key=True)
 	)
+
 
 class User(UserMixin, db.Model):
 	id: so.Mapped[int] = so.mapped_column(primary_key=True)
@@ -103,6 +106,12 @@ class User(UserMixin, db.Model):
 			return
 		return db.session.get(User, id)
 	
+
+@login.user_loader
+def load_user(id):
+	return db.session.get(User, int(id))
+
+
 class Post(db.Model):
 	id: so.Mapped[int] = so.mapped_column(primary_key=True)
 	body: so.Mapped[str] = so.mapped_column(sa.String(140))
@@ -117,8 +126,3 @@ class Post(db.Model):
 
 	def __repr__(self):
 		return '<Post {}>'.format(self.body)
-	
-@login.user_loader
-def load_user(id):
-	return db.session.get(User, int(id))
-	

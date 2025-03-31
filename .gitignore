@@ -8,7 +8,7 @@ logs/
 *.mo
 
 venv
-.flaskenv
+.env
 app.db
 microblog.log*
 *.pot
