@@ -18,7 +18,7 @@ class Config:
 	MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
 	GOOGLE_TRANSLATOR_KEY = os.environ.get('GOOGLE_TRANSLATOR_KEY')
 
-	ADMINS = os.environ.get('ADMINS')
+	ADMINS = os.environ.get('ADMINS').split(',')
 	LANGUAGES=['en', 'es']
 
 	POSTS_PER_PAGE = 25
