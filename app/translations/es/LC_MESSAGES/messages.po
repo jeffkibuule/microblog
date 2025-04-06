@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-03 20:38-0700\n"
+"POT-Creation-Date: 2025-04-06 11:41-0700\n"
 "PO-Revision-Date: 2025-03-30 20:18-0700\n"
 "Last-Translator: \n"
 "Language: es\n"
@@ -18,9 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: app/__init__.py:23
+#: app/__init__.py:25
 msgid "Please log in to access this page."
 msgstr ""
+
+#: app/email.py:27
+msgid "[Microblog] Reset Your Password"
+msgstr "[Microblog] Restablecer contraseña"
 
 #: app/translate.py:15 app/translate.py:33
 msgid "Error: the translation service is not configured."
@@ -29,10 +33,6 @@ msgstr "Error: El servicio de traducción no está configurado."
 #: app/translate.py:26 app/translate.py:46
 msgid "Error: the translation service failed."
 msgstr "Error: El servicio de traducción falló."
-
-#: app/auth/email.py:20
-msgid "[Microblog] Reset Your Password"
-msgstr "[Microblog] Restablecer contraseña"
 
 #: app/auth/forms.py:10 app/auth/forms.py:16 app/main/forms.py:12
 msgid "Username"
@@ -126,7 +126,7 @@ msgid "Your changes have been saved."
 msgstr "Tus cambios han sido salvados."
 
 #: app/main/routes.py:108 app/main/routes.py:129
-#, fuzzy, python-brace-format, python-format
+#, fuzzy, python-format
 msgid "User %(username)s not found."
 msgstr "El usuario %(username)s no ha sido encontrado."
 
@@ -135,7 +135,7 @@ msgid "You cannot follow yourself!"
 msgstr "¡No te puedes seguir a tí mismo!"
 
 #: app/main/routes.py:115
-#, fuzzy, python-brace-format, python-format
+#, fuzzy, python-format
 msgid "You are following %(username)s!"
 msgstr "¡Ahora estás siguiendo a %(username)s!"
 
@@ -144,17 +144,25 @@ msgid "You cannot unfollow yourself!"
 msgstr "¡No te puedes dejar de seguir a tí mismo!"
 
 #: app/main/routes.py:136
-#, fuzzy, python-brace-format, python-format
+#, fuzzy, python-format
 msgid "You are not following %(username)s."
 msgstr "No estás siguiendo a %(username)s."
 
-#: app/main/routes.py:182
+#: app/main/routes.py:184
 #, fuzzy
 msgid "Your message has been sent."
 msgstr "Tu contraseña ha sido cambiada."
 
-#: app/main/routes.py:184
+#: app/main/routes.py:186
 msgid "Send Message"
+msgstr ""
+
+#: app/main/routes.py:225
+msgid "An export task is currently in progress"
+msgstr ""
+
+#: app/main/routes.py:227
+msgid "Exporting posts..."
 msgstr ""
 
 #: app/templates/_post.html:15
@@ -174,20 +182,20 @@ msgstr "Bienvenido a Microblog"
 msgid "Login"
 msgstr "Iniciar Sesión"
 
-#: app/templates/base.html:34 app/templates/messages.html:4
+#: app/templates/base.html:35 app/templates/messages.html:4
 msgid "Messages"
 msgstr ""
 
-#: app/templates/base.html:37
+#: app/templates/base.html:45
 #, fuzzy
 msgid "Profile"
 msgstr "Editar Perfil"
 
-#: app/templates/base.html:40
+#: app/templates/base.html:48
 msgid "Logout"
 msgstr "Cerrar Sesión"
 
-#: app/templates/base.html:78
+#: app/templates/base.html:102
 msgid "Translation"
 msgstr "Traducción"
 
@@ -201,12 +209,12 @@ msgid "Hello, %(username)s"
 msgstr "¡Ahora estás siguiendo a %(username)s!"
 
 #: app/templates/index.html:28 app/templates/search.html:12
-#: app/templates/user.html:51
+#: app/templates/user.html:58
 msgid "Newer posts"
 msgstr "Artículos siguientes"
 
 #: app/templates/index.html:33 app/templates/search.html:17
-#: app/templates/user.html:56
+#: app/templates/user.html:63
 msgid "Older posts"
 msgstr "Artículos previos"
 
@@ -255,15 +263,20 @@ msgstr "siguiendo a %(count)d"
 msgid "Edit your profile"
 msgstr "Editar tu perfil"
 
-#: app/templates/user.html:19 app/templates/user_popup.html:15
+#: app/templates/user.html:18
+#, fuzzy
+msgid "Export your posts"
+msgstr "¿Te olvidaste tu contraseña?"
+
+#: app/templates/user.html:26 app/templates/user_popup.html:15
 msgid "Follow"
 msgstr "Seguir"
 
-#: app/templates/user.html:26 app/templates/user_popup.html:23
+#: app/templates/user.html:33 app/templates/user_popup.html:23
 msgid "Unfollow"
 msgstr "Dejar de seguir"
 
-#: app/templates/user.html:34
+#: app/templates/user.html:41
 msgid "Send private message"
 msgstr ""
 

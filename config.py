@@ -17,8 +17,9 @@ class Config:
 	MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 	MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
 	GOOGLE_TRANSLATOR_KEY = os.environ.get('GOOGLE_TRANSLATOR_KEY')
+	REDIS_URL = os.environ.get('REDIS_URL') or 'redis://'
 
-	ADMINS = os.environ.get('ADMINS').split(',')
+	ADMINS = os.environ.get('ADMINS', '').split(',')
 	LANGUAGES=['en', 'es']
 
 	POSTS_PER_PAGE = 25

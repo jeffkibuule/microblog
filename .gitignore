@@ -12,3 +12,4 @@ venv
 app.db
 microblog.log*
 *.pot
+*.rdb
